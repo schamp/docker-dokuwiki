@@ -7,7 +7,9 @@ ENV MD5_CHECKSUM 9b9ad79421a1bdad9c133e859140f3f2
 # mbstring for PDF export
 # zlib for installing plugins / upgrade
 RUN apk --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/community/ add \
-    php7 php7-fpm php7-gd php7-mbstring php7-session php7-xml php7-openssl php7-zlib nginx supervisor curl tar
+    php7 php7-fpm \
+    php7-ctype php7-gd php7-mbstring php7-session php7-xml php7-openssl php7-zlib \
+    nginx supervisor curl tar
 
 RUN mkdir -p /run/nginx && \
     mkdir -p /var/www /var/dokuwiki-storage/data && \
